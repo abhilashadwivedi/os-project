@@ -1,0 +1,14 @@
+semaphore customersema = 0, barber = 0,cutting = 0,mutex = 1;
+int customer = 0;
+void barber()
+ {
+while(true)
+ {
+	wait(customersema); 
+	wait(mutex); 
+	customer = customer - 1;
+	signal(barbers);
+	signal(mutex);
+	cut_hair();
+}
+}
