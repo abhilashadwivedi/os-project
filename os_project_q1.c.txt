@@ -57,7 +57,7 @@ pthread_join(tid[i],NULL);
 sleep(1);
 }
 
-allDone = 1;
+jobDone = 1;
 sem_post(&barber_sleep);
 pthread_join(btid,NULL);
 }
