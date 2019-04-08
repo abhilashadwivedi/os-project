@@ -85,3 +85,33 @@ sem_wait(&seat);
 sem_post(&barberChair);
 printf("Customer number %d leaving barber shop.\n", num);
 }
+
+void *barber(void *junk) {
+
+while (!jobDone {
+
+printf("The barber is sleeping\n");
+sem_wait(&barber_sleep);
+
+if (!jobDone {
+
+printf("The barber is cutting hair\n");
+r_wait(2);
+printf("The barber has finished his job of cutting hair.\n");
+
+sem_post(&seat);
+}
+else {
+printf("The barber is not working and going home for the day.\n");
+}
+}
+}
+
+void r_wait(int secs) {
+int len;
+
+len = (int) ((1 * secs) + 1);
+sleep(len);
+}
+
+
