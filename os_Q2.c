@@ -42,4 +42,17 @@ int main()
       turnaround_t+=time-wt[count]; 
       flag=0; 
     } 
+
+    if(count==n-1) 
+      count=0; 
+    else if(wt[count+1]<=time) 
+      count++; 
+    else 
+      count=0; 
+  } 
+    printf("\nAverage Waiting Time= %f\n",waiting_time*1.0/n); 
+    printf("Avg Turnaround Time = %f",turnaround_time*1.0/n); 
+  
+    return 0; 
+}
   
