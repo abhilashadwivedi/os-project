@@ -19,4 +19,27 @@ int main()
   } 
   printf("Enter Time Quantum:\t"); 
   scanf("%d",&time_quantum); 
-  printf("\n\nProcess\t|Turnaround time|Waiting Time\n\n"); 
+  printf("\n\nProcess\t|Turnaround time|Waiting Time\n\n");
+  
+  for(time=0,count=0;left!=0) 
+  { 
+    if(rt[count]<=time_quantum && rt[count]>0) 
+    { 
+      time+=rt[count]; 
+      rt[count]=0; 
+      flag=1; 
+    } 
+    else if(rt[count]>0) 
+    { 
+      rt[count]-=time_quantum; 
+      time+=time_quantum; 
+    } 
+    if(rt[count]==0 && flag==1) 
+    { 
+          left--; 
+      printf("P[%d]\t|\t%d\t|\t%d\n",count+1,time-wt[count],time-wt[count]-xt[count]); 
+      waiting_time+=time-wt[count]-xt[count]; 
+      turnaround_t+=time-wt[count]; 
+      flag=0; 
+    } 
+  
